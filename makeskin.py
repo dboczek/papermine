@@ -1,3 +1,37 @@
+"""
+Resulting paper model schema:
+                                    Head
+            Right arm             +-------+             Left arm
+          +-----------+           |       |           +-----------+
+          | inward    |           | back  |           | inward    |
+          +-----------+           |       |           +-----------+
+          | back      |   +-------+-------+-------+   | back      |
+      +---+-----------+---+       |       |       +---+-----------+---+
+ hand |   | otwrad    |   | right | top   | left  |   | outside   |   | hand
+      +---+-----------+---+       |       |       +---+-----------+---+
+          | front     |   +-------+-------+-------+   | front     |
+          +-----------+ ^shoulder |       | shoulder^ +-----------+
+                                  | front |                    
+                                  |       |                    
+                    bottom font > +-------+   +-------+ < bottom back
+                              +---+-------+---+-------+
+                              | r |       | l |       |
+                              | i |       | e |       |
+                    Body >    | g | front | f | back  |
+                              | h |       | t |       |
+                              | t |       |   |       |
+                              +---+---+---+---+---+---+
+                              | o | f | f | o | f | f |
+                              | u | r | r | u | r | r |
+                              | t | o | o | t | o | o |
+                              | w | n | n | w | n | n |
+                              | . | t | t | . | t | t |
+                              +---+---+---+---+---+---+
+                           foot > |   |   | < foot
+                                  +---+---+
+
+"""
+
 try:
     from PIL import Image
 except ImportError:
@@ -41,10 +75,6 @@ parts = {
     "arm_in":     (48, 20, 52, 32),
     "arm_back":   (52, 20, 56, 32),
 }
-
-
-
-
 
 def main(argv):
     infile = argv[0]
